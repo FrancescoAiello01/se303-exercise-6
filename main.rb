@@ -7,12 +7,15 @@ class Button
   end
   
   def draw_dark_mode
-    # darken foreground color for dark mode
-    paint(@label_text, @x, @y, @foreground_color - 10, '#111111')
+    paint(@label_text, @x, @y, dark_foreground, '#111111')
   end
   
   def draw_light_mode
     paint(@label_text, @x, @y, light_foreground, '#E0E0E0')
+  end
+  
+  def dark_foreground
+    @foreground_color - 10
   end
   
   def light_foreground
