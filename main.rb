@@ -12,7 +12,10 @@ class Button
   end
   
   def draw_light_mode
-    # lighten foreground color for non-dark mode
-    paint(@label_text, @x, @y, @foreground_color + 10, '#E0E0E0')
+    paint(@label_text, @x, @y, light_foreground, '#E0E0E0')
+  end
+  
+  def light_foreground
+    @foreground_color + 10
   end
 end
